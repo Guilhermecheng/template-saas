@@ -1,4 +1,4 @@
-import { handleStripeCancelSubscription } from "@/app/server/stripe/handle-cansel"
+import { handleStripeCancelSubscription } from "@/app/server/stripe/handle-cancel"
 import { handleStripPayment } from "@/app/server/stripe/handle-payment"
 import { handleStripeSubscription } from "@/app/server/stripe/handle-subscription"
 import { stripe } from "@/lib/stripe"
@@ -9,16 +9,13 @@ const secret = process.env.STRIPE_WEBHOOK_SECRET
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json()
+    const body = await req.text()
 
     const headersList = await headers()
     const signature = headersList.get("stripe-signature")
 
     if (!signature || !secret) {
-      return NextResponse.json(
-        { error: "No signature foiund" },
-        { status: 400 },
-      )
+      return NextResponse.json({ error: "No signature found" }, { status: 400 })
     }
 
     const event = stripe.webhooks.constructEvent(body, signature, secret)
