@@ -1,10 +1,10 @@
 import { PaymentResponse } from "mercadopago/dist/clients/payment/commonTypes"
 
 export async function handleMercadoPagoPayment(paymentData: PaymentResponse) {
-  const {} = paymentData
+  // const {} = paymentData
 
-  const metadata = paymentData.metadata
-  const userEmail = metadata.user_email
-  const testeId = metadata.teste_id
+  // const metadata = paymentData.metadata
+  // const userEmail = metadata.user_email
+  // const testeId = metadata.teste_id
   console.log("PAGAMENTO COM SUCESSO", paymentData)
 }
