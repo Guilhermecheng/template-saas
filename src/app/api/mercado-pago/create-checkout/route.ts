@@ -13,10 +13,10 @@ export async function POST(request: NextRequest) {
     const createdPreference = await preference.create({
       body: {
         external_reference: testeId, // isso impacta na pontuação do Mercado Pago
-        metadata: [
+        metadata: {
           testeId, // essa variavel é convertida para snake_case -> teste_id
           userEmail,
-        ],
+        },
         ...(userEmail && {
           payer: {
             email: userEmail,
