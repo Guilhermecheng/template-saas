@@ -1,7 +1,13 @@
 import { handleAuth } from "@/actions/handle-auth";
 import { auth } from "@/lib/auth";
+import { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+
+export const metadata: Metadata = {
+  title: "Dashboard | Template SaaS",
+  description: "Template SaaS em Next.js, Firebase, Stripe, Mercado Pago e Resend",
+}
 
 export default async function Dashboard() {
   // server side	

@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Template SaaS",
+  description: "Template SaaS em Next.js, Firebase, Stripe, Mercado Pago e Resend",
+}
 
 export default function LandingPage() {
   return (
