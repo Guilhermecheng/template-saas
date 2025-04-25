@@ -17,7 +17,7 @@ export default function Payments() {
       <h1 className="text-2xl font-bold mb-16">Pagamentos</h1>
 
       <button
-        className="border rounded-md px-1"
+        className="border rounded-xl px-4 py-2 cursor-pointer"
         onClick={() => createPaymentStripeCheckout({
           testeId: "123"
         })}
@@ -25,7 +25,7 @@ export default function Payments() {
         Criar pagamento Stripe
       </button>
       <button
-        className="border rounded-md px-1"
+        className="border rounded-xl px-4 py-2 cursor-pointer"
         onClick={() => createSubscriptionStripeCheckout({
           testeId: "123"
         })}
@@ -33,14 +33,14 @@ export default function Payments() {
         Criar assinatura Stripe
       </button>
       <button
-        className="border rounded-md px-1"
+        className="border rounded-xl px-4 py-2 cursor-pointer"
         onClick={() => handleCreateStripePortal()}
       >
         Criar Portal de Pagamentos Stripe
       </button>
 
       <button
-        className="border rounded-md px-1"
+        className="border rounded-xl px-4 py-2 cursor-pointer"
         onClick={() => {
           createMercadoPagoCheckout({
             testeId: "123",
