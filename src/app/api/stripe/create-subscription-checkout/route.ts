@@ -26,6 +26,7 @@ export async function POST(req: NextRequest) {
     testeId,
     price,
     userId,
+    userEmail,
   }
 
   try {

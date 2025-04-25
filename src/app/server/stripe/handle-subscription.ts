@@ -15,7 +15,8 @@ export async function handleStripeSubscription(
     const metadata = event.data.object.metadata
     const userId = metadata?.userId
     const userEmail =
-      event.data.object.customer_email || event.data.object.customer_email
+      event.data.object.customer_email ||
+      event.data.object.customer_details?.email
 
     if (!userId || !userEmail) {
       console.error("User ID not found")
@@ -28,7 +29,7 @@ export async function handleStripeSubscription(
     })
 
     const { data, error } = await resend.emails.send({
-      from: "Guilherme <guilherme.cheng@gmail.com>",
+      from: "guilherme.cheng@gmail.com",
       to: [userEmail],
       subject: "Seja bem-vindo(a) à nossa plataforma",
       text: "Obrigado por assinar nosso serviço. Estamos felizes em tê-lo(a) conosco!",
