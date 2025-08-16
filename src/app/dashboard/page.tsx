@@ -26,6 +26,9 @@ export default async function Dashboard() {
 
       <Link href="/payments" className="border rounded-xl px-4 py-2 cursor-pointer">Ir para pagamentos</Link>
 
+      <Link href="/paddle-payments" className="border rounded-xl px-4 py-2 cursor-pointer">Ir para Paddle</Link>
+      <Link href="/baby" className="border rounded-xl px-4 py-2 cursor-pointer">Ir para Baby N Me</Link>
+
       {session?.user?.email && (
         <form
           action={handleAuth}
